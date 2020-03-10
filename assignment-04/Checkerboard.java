@@ -10,20 +10,20 @@ public class Checkerboard {
 
         for (int i = 0; i < n; i++) {
             if (isEven && i > 0) {
-                if (color == "blue") {
+                if (color.equals("blue")) {
                     color = "gray";
                     StdDraw.setPenColor(StdDraw.LIGHT_GRAY);
-                } else if (color == "gray") {
+                } else if (color.equals("gray")) {
                     color = "blue";
                     StdDraw.setPenColor(StdDraw.BLUE);
                 }
             }
 
             for (int j = 0; j < n; j++) {
-                if (color == "blue") {
+                if (color.equals("blue")) {
                     color = "gray";
                     StdDraw.setPenColor(StdDraw.LIGHT_GRAY);
-                } else if (color == "gray") {
+                } else if (color.equals("gray")) {
                     color = "blue";
                     StdDraw.setPenColor(StdDraw.BLUE);
                 }
