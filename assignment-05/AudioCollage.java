@@ -1,3 +1,4 @@
+
 public class AudioCollage {
     public static double[] amplify(double[] a, double alpha) {
         double[] amplified = new double[a.length];
@@ -62,7 +63,6 @@ public class AudioCollage {
     }
 
     public static void main(String[] args) {
-        // StdAudio.play("piano.wav");
         double[] piano = StdAudio.read("piano.wav");
         double[] beatbox = StdAudio.read("beatbox.wav");
         double[] harp = StdAudio.read("harp.wav");
@@ -76,13 +76,13 @@ public class AudioCollage {
         double[] fnAudio = mix(audio1, audio2);
         fnAudio = merge(fnAudio, audio3);
 
+        for (int i = 0; i < fnAudio.length; i++) {
+            if (fnAudio[i] > 1)
+                fnAudio[i] = 1;
+            if (fnAudio[i] < -1)
+                fnAudio[i] = -1;
+        }
         StdAudio.play(fnAudio);
-
-        // audio = amplify(audio, 0.5);
-        // StdAudio.play(reverse(audio));
-        // StdAudio.play(merge(audio, audio2));
-        // StdAudio.play(mix(audio, audio2));
-        // StdAudio.play(changeSpeed(audio, 2));
 
     }
 }
