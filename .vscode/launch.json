@@ -1,0 +1,67 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Debug (Launch) - Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-CMYKtoRGB<coursera _2024d672>",
+            "request": "launch",
+            "mainClass": "CMYKtoRGB",
+            "projectName": "coursera _2024d672"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-GreatCircle<coursera _2024d672>",
+            "request": "launch",
+            "mainClass": "GreatCircle",
+            "projectName": "coursera _2024d672"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-HelloGoodbye<coursera _2024d672>",
+            "request": "launch",
+            "mainClass": "HelloGoodbye",
+            "projectName": "coursera _2024d672"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-HelloWorld<coursera _2024d672>",
+            "request": "launch",
+            "mainClass": "HelloWorld",
+            "projectName": "coursera _2024d672"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-RightTriangle<coursera _2024d672>",
+            "request": "launch",
+            "mainClass": "RightTriangle",
+            "projectName": "coursera _2024d672"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-HelloGoodbye",
+            "request": "launch",
+            "mainClass": "HelloGoodbye"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-HelloWorld",
+            "request": "launch",
+            "mainClass": "HelloWorld"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-RightTriangle",
+            "request": "launch",
+            "mainClass": "RightTriangle"
+        }
+    ]
+}

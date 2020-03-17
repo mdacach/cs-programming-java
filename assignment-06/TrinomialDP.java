@@ -3,7 +3,9 @@ public class TrinomialDP {
         if (Math.abs(k) > Math.abs(n))
             return 0;
 
-        long tri[][] = new long[n + 1][n + 1];
+        k = Math.abs(k); // handle negative k
+
+        long[][] tri = new long[n + 1][n + 1];
         tri[0][0] = 1; // all the others are assigned 0
 
         for (int i = 1; i <= n; i++) {

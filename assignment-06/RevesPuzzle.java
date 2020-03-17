@@ -1,39 +1,41 @@
 public class RevesPuzzle {
 
-    public static void reve(int n, int k, String from, String to, String spare) {
-        hanoi(n, k, from, to, spare);
+    private static void hanoi3(int n, int disc, char from, char to, char sp) {
+        if (n == 0) {
+            // StdOut.println("end hanoi3");
+
+            return;
+
+        }
+
+        // StdOut.println("hanoi4 with n: " + n);
+        hanoi3(n - 1, disc - 1, from, sp, to);
+        StdOut.println("Move disc " + disc + " from " + from + " to " + to);
+        hanoi3(n - 1, disc - 1, sp, to, from);
+
     }
 
-    public static void hanoi(int n, int k, String from, String to, String spare) {
-        if (n == 0)
+    private static void hanoi4(int n, int disc, char from, char to, char sp1, char sp2) {
+        if (n == 0) {
+            // StdOut.println("end hanoi4");
             return;
-        else {
-            hanoi(n - 1, k, from, spare, to);
-            StdOut.println("Move disc " + (n + k) + " from " + from + " to " + to);
-            hanoi(n - 1, k, spare, to, from);
         }
-    }
+        int k = (int) (n + 1 - Math.sqrt(2 * n + 1));
 
-    public static void hanoi(int n, String from, String to, String spare) {
-        if (n == 0)
-            return;
-        else {
-            hanoi(n - 1, from, spare, to);
-            StdOut.println("Move disc " + n + " from " + from + " to " + to);
-            hanoi(n - 1, spare, to, from);
-        }
+        hanoi4(k, k, from, sp1, to, sp2);
+        hanoi3(n - k, n, from, to, sp2);
+        hanoi4(k, k, sp1, to, from, sp2);
+
     }
 
     public static void main(String[] args) {
         int n = Integer.parseInt(args[0]);
-        // Poles are A B C and D
-        // A - from
-        // D - destination
-        int k = (int) (n + 1 - Math.sqrt(2 * n + 1) + 0.5);
-
-        hanoi(k, "A", "B", "C"); // at the end here are all at pole B
-        reve(n - k, k, "A", "D", "C");
-        hanoi(k, "B", "D", "A");
-
+        int k = (int) (n + 1 - Math.sqrt(2 * n + 1));
+        // StdOut.println("k: " + k);
+        hanoi4(k, k, 'A', 'B', 'C', 'D');
+        // StdOut.println("------------------------------ ");
+        hanoi3(n - k, n, 'A', 'D', 'C');
+        // StdOut.println("------------------------------ ");
+        hanoi4(k, k, 'B', 'D', 'A', 'C');
     }
 }
