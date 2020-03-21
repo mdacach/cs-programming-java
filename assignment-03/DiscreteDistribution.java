@@ -2,30 +2,30 @@ public class DiscreteDistribution {
     public static void main(String[] args) {
         // args is the string array of arguments from command-line
         int m = Integer.parseInt(args[0]);
-        int size = args.length - 1;
+        int size = args.length;
         int[] a = new int[size];
-        int[] sums = new int[size];
+        int[] sums = new int[size + 1];
 
-        for (int i = 0; i < size; i++) {
-            a[i] = Integer.parseInt(args[i + 1]);
+        for (int i = 1; i < size; i++) {
+            a[i] = Integer.parseInt(args[i]);
         }
 
-        for (int i = 0; i < size; i++) {
+        for (int i = 1; i <= size; i++) {
             sums[i] = 0;
-            for (int j = 0; j <= i; j++) {
+
+            for (int j = 1; j <= i - 1; j++) {
                 sums[i] += a[j];
             }
-
         }
 
-        for (int i = 0; i < m; i++) {
-            int rn = (int) (Math.random() * sums[size - 1]);
+        for (int i = 1; i <= m; i++) {
 
+            int rn = (int) (Math.random() * (sums[size]));
             int ind = 0;
-            while (rn > sums[ind]) {
+            while (sums[ind] <= rn) {
                 ind++;
             }
-            System.out.print((ind + 1) + "  ");
+            System.out.print((ind - 1) + " ");
         }
 
     }
