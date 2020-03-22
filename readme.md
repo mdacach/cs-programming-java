@@ -5,3 +5,5 @@ All assignments passed with 100/100 points.
 
 https://www.coursera.org/learn/cs-programming-java
 
+* ### Week 1 - Hello, World
+https://coursera.cs.princeton.edu/introcs/assignments/hello/specification.php
