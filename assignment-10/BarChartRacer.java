@@ -5,20 +5,23 @@ public class BarChartRacer {
     public static void main(String[] args) {
         StdDraw.enableDoubleBuffering();
         StdDraw.setCanvasSize(800, 800);
+
         String filename = args[0];
         int k = Integer.parseInt(args[1]);
+
         In reader = new In(filename);
 
-        String title, xAxisLabel, dataSource;
-        title = reader.readLine();
-        xAxisLabel = reader.readLine();
-        dataSource = reader.readLine();
-        BarChart barChart = new BarChart(title, xAxisLabel, dataSource);
-        while (reader.hasNextLine()) {
-            reader.readLine(); // blank line
+        String title = reader.readLine();
+        String xAxisLabel = reader.readLine();
+        String dataSource = reader.readLine();
 
+        BarChart barChart = new BarChart(title, xAxisLabel, dataSource);
+
+        reader.readLine(); // blank line
+        while (reader.hasNextLine()) {
             int n = Integer.parseInt(reader.readLine());
             Bar[] bars = new Bar[n];
+
             for (int i = 0; i < n; i++) {
                 String line = reader.readLine();
                 String[] arguments = line.split(",");
@@ -27,6 +30,7 @@ public class BarChartRacer {
             }
 
             Arrays.sort(bars);
+
             for (int i = n - 1; i >= Math.max(n - k, 0); i--) {
                 barChart.add(bars[i].getName(), bars[i].getValue(), bars[i].getCategory());
             }
@@ -37,6 +41,7 @@ public class BarChartRacer {
             StdDraw.show();
             StdDraw.pause(3);
 
+            reader.readLine();
         }
     }
 }
